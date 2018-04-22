@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sit305", "sit305.csproj", "{2099FBCE-5EA3-6F84-9BDE-90CCBC5E2835}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sit305.Editor", "sit305.Editor.csproj", "{968D7ABC-94F6-3784-DF05-577F91845FE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2099FBCE-5EA3-6F84-9BDE-90CCBC5E2835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2099FBCE-5EA3-6F84-9BDE-90CCBC5E2835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2099FBCE-5EA3-6F84-9BDE-90CCBC5E2835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2099FBCE-5EA3-6F84-9BDE-90CCBC5E2835}.Release|Any CPU.Build.0 = Release|Any CPU
+		{968D7ABC-94F6-3784-DF05-577F91845FE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{968D7ABC-94F6-3784-DF05-577F91845FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{968D7ABC-94F6-3784-DF05-577F91845FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{968D7ABC-94F6-3784-DF05-577F91845FE0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
