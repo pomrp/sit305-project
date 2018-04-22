@@ -1,0 +1,13 @@
+Week3
+* Martin Ma and Yuan Ren start finding useful develop software. such as Xcode, Android studio and Unity. After test each of them we decided to use Unity.
+  Also during week3 Martin found some useful tutorial video which help us use Unity.
+
+Week4
+* In this week,we designed UI and found images which is useful for our app. And Martin build the first version of the game. We also discuess about the main storyline.
+
+Week5
+*We build up the flowchart in unity. Added null checks in Flowchart variable accessors
+. Set Say Dialog property for characters.  Can now specify the gameobject to shake for punch tag in Writer component
+
+Week6
+*Write command for writing text to any text object. Say Dialog now adjusts Story Text rect when character image is visible. Added background images in game. Added background music when game start. Added text backgroud sound.
