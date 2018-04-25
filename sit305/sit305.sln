@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sit305", "sit305.csproj", "{2099FBCE-5EA3-6F84-9BDE-90CCBC5E2835}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sit305.Editor", "sit305.Editor.csproj", "{968D7ABC-94F6-3784-DF05-577F91845FE0}"

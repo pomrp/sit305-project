@@ -77,15 +77,18 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFiltering: 0
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousColorSigma: 1
-    m_PVRFilteringAtrousNormalSigma: 1
-    m_PVRFilteringAtrousPositionSigma: 1
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -107,6 +110,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    debug:
+      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1 &454601973
 GameObject:
@@ -179,11 +184,11 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!4 &454601978
 Transform:
   m_ObjectHideFlags: 0
@@ -290,18 +295,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 58.4873, y: -87.162254}
+  scrollPos: {x: 322.69644, y: 112.16938}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 213
-  zoom: 0.84999967
+  zoom: 0.54999995
   scrollViewRect:
     serializedVersion: 2
     x: -343
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 479659221}
   selectedCommands: []
   variables:
   - {fileID: 479659249}
@@ -368,7 +374,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 197.92308
     y: 128.00002
-    width: 122.94121
+    width: 120.909096
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -604,7 +610,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 379
     y: 125.000015
-    width: 120.588264
+    width: 122.72728
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -704,7 +710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 15
   indentLevel: 0
-  text: kiss
+  text: ' Relentless Assault'
   description: 
   targetBlock: {fileID: 479659221}
   hideIfVisited: 0
@@ -730,12 +736,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 427.5384
     y: 540.8462
-    width: 120
+    width: 151.81819
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 17
-  blockName: kiss
+  blockName: Relentless Assault
   description: 
   eventHandler: {fileID: 0}
   commandList:
@@ -756,7 +762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 362
+    x: 360.82352
     y: 221.00002
     width: 120
     height: 40
@@ -783,7 +789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 16
   indentLevel: 0
-  text: fuck
+  text: Charm
   description: 
   targetBlock: {fileID: 479659224}
   hideIfVisited: 0
@@ -807,14 +813,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 249.18182
+    x: 246.82889
     y: 396.45453
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 18
-  blockName: fuck
+  blockName: Charm
   description: 
   eventHandler: {fileID: 0}
   commandList:
@@ -855,7 +861,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 21
   indentLevel: 0
-  storyText: "\u5594\u5594\uFF0C\u5929\u771F\u7121\u90AA\u53C8\u695A\u695A\u53EF\u6190\u7684\u5973\u5B69\u554A{wc}\r\n\u6211\u600E\u9EBC\u5FCD\u5FC3\u6B3A\u8CA0\u4F60\u5462"
+  storyText: "Oh Oh,  look at your little fist{wc}\r\nHow can I bear to bully you?\r
+    {wc}\na~ a~ I will  never forget you little girl \n"
   description: 
   character: {fileID: 1128158966}
   portrait: {fileID: 21300000, guid: 430c358d9bea00b44a90f2b7302b6b44, type: 3}
@@ -881,7 +888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 20
   indentLevel: 0
-  storyText: i want to kiss u!
+  storyText: ' Ready for battle!    '
   description: 
   character: {fileID: 1369246649}
   portrait: {fileID: 21300000, guid: 11118ca0818bb7748922200e1bab28eb, type: 3}
@@ -907,7 +914,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 22
   indentLevel: 0
-  storyText: "\u5F97\u5230\u6070\u5409\u5A03\u5A03\u4E00\u96BB{wc}\r\n\u91D1\u9322\u52A0987{wc}\r\n\u9B45\u529B\u52A0438{wc}\r\n\u5FC3\u6A5F\u52A0543"
+  storyText: "The monster has been killed \nGot a locked ancient rune{wc}\r\nLevel
+    Up to Level 2 !{wc}\r\nGot New spell  \"Traveler's Call\" "
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -933,7 +941,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 23
   indentLevel: 0
-  storyText: "\u770B\u4F60\u9019\u8822\u6A23\u4E0D\u53BB\u81ED\u6C34\u6E9D\u7167\u7167\u93E1\u5B50{wc}\r\n\u6EFF\u81C9\u6A6B\u8089\u7319\u7370\u53C8\u7325\u893B{wc}\r\n\u5C31\u7B97\u4F60\u7121\u8166\u7684\u982D\u9871\u62FF\u53BB\u7D5E\u788E\u7576\u80A5\u6599{wc}\r\n\u4ED9\u4EBA\u638C\u90FD\u6703\u88AB\u4F60\u718F\u6B7B\u554A{wc}\r\n\u88AB\u4F60\u718F\u6B7B\u554A{w=0.3}{punch=10,0.5}{wc}\r\n\u88AB\u4F60\u718F\u6B7B\u554A\u554A{w=0.3}{punch=20,0.7}{wc}\r\n\u88AB\u4F60\u718F\u6B7B\u554A\u554A\u554A{w=0.3}{punch=30,1}"
+  storyText: "Don't hold back.{wc}\r\nLet's have some real fun.{wc}\r\nDon't you trust
+    me?{wc}\r\nShould I make your pulse rise? Or...STOP! {wc}\r\nOr...STOP!{w=0.3}{punch=10,0.5}{wc}\r\nOr...STOOOP!{w=0.3}{punch=20,0.7}{wc}\r\nOr...STOOOOP!{w=0.3}{punch=30,1}"
   description: 
   character: {fileID: 1369246649}
   portrait: {fileID: 21300000, guid: 11118ca0818bb7748922200e1bab28eb, type: 3}
@@ -959,7 +968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 24
   indentLevel: 0
-  storyText: "\u5594\u5594\u5594\u5594\u5594"
+  storyText: Oh oh Oh Oh ~
   description: 
   character: {fileID: 1128158966}
   portrait: {fileID: 21300000, guid: 430c358d9bea00b44a90f2b7302b6b44, type: 3}
@@ -985,8 +994,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 25
   indentLevel: 0
-  storyText: "\u731B\u7537\u96D9\u624B\u906E\u81C9\u5D29\u6F70\u5730\u9003\u8D70\u4E86{wc}\r\n\u5F97\u5230\u4E00\u5927\u5768\u88AB\u773C\u6DDA\u6CBE\u6EBC\u7684\u6CE5\u5DF4{wc}\r\n\u53E3\u624D\u52A0449
-    {wc}\r\n\u9053\u5FB7\u964D\u70BA\u8CA0999 \u6C38\u4E0D\u5F97\u63D0\u9AD8"
+  storyText: "The enemy was tempted{wc}\r\nGot a locked ancient rune{wc}\r\nLevel
+    Up to Level 2 !{wc}\r\nGot New spell  \"Traveler's Call\" "
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1182,8 +1191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 328.1098
-    y: 685.6646
+    x: 326.29163
+    y: 687.4828
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1695,8 +1704,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 560.40735
-    y: 184.94048
+    x: 562.2255
+    y: 183.764
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1956,6 +1965,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1971,6 +1981,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
