@@ -11,3 +11,30 @@ Week5
 
 Week6
 *Write command for writing text to any text object. Say Dialog now adjusts Story Text rect when character image is visible. Added background images in game. Added background music when game start. Added text backgroud sound.
+
+Week7
+This week is a big week we made many things.
+25/4/2018:
+renyuan:
+6.make the difficult skills challenge summary:
+There is one main skills challenges which we don't have but we are facing to right now:
+      a.When we plant the tic tac toe game in episode 3, how can we go to episode 4 from tic tac toe game in episode 3.
+
+26/4/2018
+renyuan:1.find the witch's images from google.
+      2.find the withc's daughter's images from google.
+      3.find a new background images from google.
+      4.help for the game design.
+      5.make the storyline for the episode 3.
+      6.perfect the storyline for episode 2. 
+martin:
+      1.design the game to perfect the episode 2.
+      2.design a begin of episode 3.
+      3.design the dialog of the player and witch in episode 2.
+      4.design the dialog of the witch's daughter in episode 3.
+      5.design the button of the spell in episode 2.
+      6.make the difficult skills challenge summary:
+      There are two main skills challenges which we don't have but we are facing to right now:
+      a.In episode 2, if we want to believe the witch and find four magic things for her, we don't know how to go to episode 3 when we find all of four things.
+      b.We don't know how to plant more game such as tic tac toe in episode 3.
+      c.We still face the challenge renyuan provide in 25/4/2018. 
