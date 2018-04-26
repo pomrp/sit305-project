@@ -77,18 +77,15 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFilterTypeDirect: 0
-    m_PVRFilterTypeIndirect: 0
-    m_PVRFilterTypeAO: 0
+    m_PVRFiltering: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
-    m_PVRFilteringAtrousPositionSigmaIndirect: 2
-    m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
+    m_PVRFilteringAtrousColorSigma: 1
+    m_PVRFilteringAtrousNormalSigma: 1
+    m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -110,8 +107,6 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
-    debug:
-      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1 &454601973
 GameObject:
@@ -184,11 +179,11 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
 --- !u!4 &454601978
 Transform:
   m_ObjectHideFlags: 0
@@ -249,7 +244,6 @@ GameObject:
   - component: {fileID: 479659238}
   - component: {fileID: 479659242}
   - component: {fileID: 479659241}
-  - component: {fileID: 479659243}
   - component: {fileID: 479659244}
   - component: {fileID: 479659246}
   - component: {fileID: 479659245}
@@ -274,7 +268,6 @@ GameObject:
   - component: {fileID: 479659255}
   - component: {fileID: 479659254}
   - component: {fileID: 479659250}
-  - component: {fileID: 479659268}
   - component: {fileID: 479659269}
   - component: {fileID: 479659270}
   - component: {fileID: 479659272}
@@ -290,6 +283,12 @@ GameObject:
   - component: {fileID: 479659278}
   - component: {fileID: 479659283}
   - component: {fileID: 479659282}
+  - component: {fileID: 479659284}
+  - component: {fileID: 479659286}
+  - component: {fileID: 479659288}
+  - component: {fileID: 479659285}
+  - component: {fileID: 479659287}
+  - component: {fileID: 479659296}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -310,11 +309,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 143.89726, y: -18.347263}
+  scrollPos: {x: 213.01758, y: -24.902008}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 213
-  zoom: 0.54999995
+  zoom: 0.4
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -322,9 +321,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 479659279}
-  selectedCommands:
-  - {fileID: 479659282}
+  - {fileID: 479659256}
+  selectedCommands: []
   variables:
   - {fileID: 479659249}
   description: 
@@ -390,7 +388,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 193.35165
     y: 127.000015
-    width: 120.909096
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -626,7 +624,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 379
     y: 126.000015
-    width: 122.72728
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -752,7 +750,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 466.5384
     y: 431.66437
-    width: 151.81819
+    width: 140
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -792,7 +790,6 @@ MonoBehaviour:
   commandList:
   - {fileID: 479659220}
   - {fileID: 479659223}
-  - {fileID: 479659243}
 --- !u!114 &479659223
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1209,8 +1206,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -4.662914
-    y: 839.4828
+    x: -7.162914
+    y: 836.9828
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1296,30 +1293,6 @@ MonoBehaviour:
   waitUntilFinished: 1
   durationOLD: 0
   targetColorOLD: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &479659243
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 479659202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 37
-  indentLevel: 0
-  text: find sth
-  description: 
-  targetBlock: {fileID: 479659244}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
-  hideThisOption:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
 --- !u!114 &479659244
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1333,8 +1306,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 600.4068
-    y: 375.84924
+    x: 1269.4279
+    y: 845.41455
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1354,7 +1327,7 @@ MonoBehaviour:
   - {fileID: 479659255}
   - {fileID: 479659254}
   - {fileID: 479659250}
-  - {fileID: 479659268}
+  - {fileID: 479659296}
 --- !u!114 &479659245
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1368,9 +1341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 40
   indentLevel: 0
-  storyText: 'can not find any thing
-
-'
+  storyText: Find the potion
   description: 
   character: {fileID: 1369246649}
   portrait: {fileID: 21300000, guid: 11118ca0818bb7748922200e1bab28eb, type: 3}
@@ -1396,8 +1367,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 558.5891
-    y: 235.84955
+    x: 799.03674
+    y: 764.43134
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1423,7 +1394,7 @@ MonoBehaviour:
   itemId: 42
   indentLevel: 0
   targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 479659222}
+  targetBlock: {fileID: 479659286}
   startLabel:
     stringRef: {fileID: 0}
     stringVal: 
@@ -1496,8 +1467,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 565.8619
-    y: 55.849625
+    x: 823.58594
+    y: 947.4541
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1523,7 +1494,7 @@ MonoBehaviour:
   itemId: 48
   indentLevel: 0
   targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 479659222}
+  targetBlock: {fileID: 479659286}
   startLabel:
     stringRef: {fileID: 0}
     stringVal: 
@@ -1542,7 +1513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 47
   indentLevel: 0
-  storyText: 'got money
+  storyText: 'Find the staff
 
 '
   description: 
@@ -1603,8 +1574,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 565.8618
-    y: 137.66776
+    x: 829.3326
+    y: 691.58563
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1630,7 +1601,7 @@ MonoBehaviour:
   itemId: 45
   indentLevel: 0
   targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 479659222}
+  targetBlock: {fileID: 479659286}
   startLabel:
     stringRef: {fileID: 0}
     stringVal: 
@@ -1649,7 +1620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 44
   indentLevel: 0
-  storyText: got fc spell
+  storyText: Find the magic hat
   description: 
   character: {fileID: 1369246649}
   portrait: {fileID: 21300000, guid: 11118ca0818bb7748922200e1bab28eb, type: 3}
@@ -1722,8 +1693,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 562.2255
-    y: 183.764
+    x: 789.4271
+    y: 856.33875
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1749,7 +1720,7 @@ MonoBehaviour:
   itemId: 51
   indentLevel: 0
   targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 479659222}
+  targetBlock: {fileID: 479659286}
   startLabel:
     stringRef: {fileID: 0}
     stringVal: 
@@ -1768,7 +1739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 50
   indentLevel: 0
-  storyText: 'level up
+  storyText: 'Find the scroll
 
 '
   description: 
@@ -1874,19 +1845,6 @@ MonoBehaviour:
   maxValue:
     integerRef: {fileID: 0}
     integerVal: 5
---- !u!114 &479659268
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 479659202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 64
-  indentLevel: 0
 --- !u!114 &479659269
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1975,7 +1933,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 664.20685
     y: 586.3395
-    width: 140.90909
+    width: 127.5
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2131,7 +2089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 77
   indentLevel: 0
-  storyText: "Dear darling, I saw your fate.{wc} \nIf you help me find my potion,scroll,magic
+  storyText: "Dear darling, I can see your fate.{wc} \nIf you help me find my potion,scroll,magic
     hat,and staff. I will tell you the shortcut to find runes. {wc}\n"
   description: 
   character: {fileID: 951238677}
@@ -2158,9 +2116,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 487.73544
-    y: 639.09546
-    width: 140.90909
+    x: 489.19788
+    y: 628.58167
+    width: 130
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2173,6 +2131,8 @@ MonoBehaviour:
   - {fileID: 479659278}
   - {fileID: 479659283}
   - {fileID: 479659282}
+  - {fileID: 479659284}
+  - {fileID: 479659288}
 --- !u!114 &479659280
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2224,7 +2184,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &479659282
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 479659202}
@@ -2235,7 +2195,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 79
   indentLevel: 0
-  storyText: why i trust you?
+  storyText: 'who are you?{wc}
+
+    why i trust you?'
   description: 
   character: {fileID: 1369246649}
   portrait: {fileID: 21300000, guid: 11118ca0818bb7748922200e1bab28eb, type: 3}
@@ -2250,7 +2212,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &479659283
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 479659202}
@@ -2277,6 +2239,143 @@ MonoBehaviour:
   move: 0
   shiftIntoPlace: 0
   waitUntilFinished: 0
+--- !u!114 &479659284
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479659202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 80
+  indentLevel: 0
+  storyText: 'I am a prophet,{wc}
+
+    Believe it or not,{wc}
+
+    It is up to you!{wc}'
+  description: 
+  character: {fileID: 951238677}
+  portrait: {fileID: 21300000, guid: 532839bb698ce3d48899e1642719fe6a, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &479659285
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479659202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 83
+  indentLevel: 0
+  text: Believe and find for witch
+  description: 
+  targetBlock: {fileID: 479659244}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+--- !u!114 &479659286
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479659202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 166.72308
+    y: 775.56555
+    width: 120
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 81
+  blockName: Believe
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 479659285}
+  - {fileID: 479659287}
+--- !u!114 &479659287
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479659202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 84
+  indentLevel: 0
+  text: I don't believe
+  description: 
+  targetBlock: {fileID: 0}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+--- !u!114 &479659288
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479659202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 82
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 479659286}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
+--- !u!114 &479659296
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479659202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 89
+  indentLevel: 0
 --- !u!1 &519703231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,7 +2401,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2318,7 +2416,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -2446,7 +2543,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2462,7 +2558,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -3052,7 +3147,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -3068,7 +3162,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
