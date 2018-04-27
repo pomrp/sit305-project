@@ -14,6 +14,14 @@ Henry comments 17/April
 - I still don't see a data/ directory (you actually need to explain all your directories in this readme file, as mentioned on a News post recently).
 - I need to see many more commits + changelog items for you to Pass. I'll give you until Sunday to catch up for Week 3 + Week 4 + Week 5.
 
+# Henry comments 27/April
+- Directory explanations should be based on the file system (not within the IDE), as I'll be checking from file system.
+- Your changelog needs a lot of work (especially who did what task each day)
+- Your data hasn't progressed enough. You need to get to this very quickly, as you can't start building your game until you can at least load the levels/world of your game. So work on getting loading working (from data files) asap.
+
+
+
+
 Compile instructions
 
 The first step is that download the zip file from the github and unzip the file.
