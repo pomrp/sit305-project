@@ -16,7 +16,10 @@ Week7
 This week is a big week we made many things.
 25/4/2018:
 renyuan:
-6.make the difficult skills challenge summary:
+1.design storyline for episode 2.
+2.add storyline for episode 2.
+3.test the code and storyline for episode 2.
+4.make the difficult skills challenge summary:
 There is one main skills challenges which we don't have but we are facing to right now:
       a.When we plant the tic tac toe game in episode 3, how can we go to episode 4 from tic tac toe game in episode 3.
 
