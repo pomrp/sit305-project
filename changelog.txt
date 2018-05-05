@@ -40,4 +40,15 @@ martin:
       There are two main skills challenges which we don't have but we are facing to right now:
       a.In episode 2, if we want to believe the witch and find four magic things for her, we don't know how to go to episode 3 when we find all of four things.
       b.We don't know how to plant more game such as tic tac toe in episode 3.
-      c.We still face the challenge renyuan provide in 25/4/2018. 
+      c.We still face the challenge renyuan provide in 25/4/2018.
+
+5/5/2018£º
+wowowowo,see what happen!we solve the the a challenge today and add a mine sweeper game in our rpg game!
+Amazing movement!
+Renyuan:1. find the turtorial for the mine sweeper.
+	2. find the turtorial for fix the a challenge we provide in 26/4/2018.
+Martin: 1. make the mine sweeper game.
+        2. make a button to break the a challenge we provide in 26/4/2018.
+	3. make the summary:
+        After we make a button to fix the a challenge we provide in 26/4/2018, we meet one more challenge:
+	a. The button was appear in many background how can we just show it in background3
