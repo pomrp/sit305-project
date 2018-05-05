@@ -601,6 +601,9 @@
     <Compile Include="Assets\Fungus\Thirdparty\Usfxr\Scripts\SfxrSynth.cs" />
     <Compile Include="Assets\FungusExamples\FungusLua\Bindings\CustomScript.cs" />
     <Compile Include="Assets\FungusExamples\MonoBehEvents\SpriteColorChangeFromFungusMouseEvent.cs" />
+    <Compile Include="Assets\saolei\Assets\Elemet.cs" />
+    <Compile Include="Assets\saolei\Assets\Gird.cs" />
+    <Compile Include="Assets\sceneswitch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fungus\Docs\CHANGELOG.txt" />

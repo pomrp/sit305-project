@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/test.unity
+    guid: 1f7006a302e03d74790462ccf48c2b07
+  - enabled: 1
+    path: Assets/saolei/Assets/adjacent.unity
+    guid: 0a31274e8ef266f44beb80429cd87801
