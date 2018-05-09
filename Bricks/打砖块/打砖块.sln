@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "打砖块", "打砖块.csproj", "{315EB17F-0E20-155A-417F-C7B34FA07DF4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "打砖块.Editor", "打砖块.Editor.csproj", "{E1E2D5E8-9F34-B590-34AB-2393344F69DF}"
