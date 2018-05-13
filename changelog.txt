@@ -52,3 +52,18 @@ Martin: 1. make the mine sweeper game.
 	3. make the summary:
         After we make a button to fix the a challenge we provide in 26/4/2018, we meet one more challenge:
 	a. The button was appear in many background how can we just show it in background3
+
+Week9 :In this week, we added 2 more small games into our RPG game
+Ren Yuan:1.created Arkanoid game.
+         2. Add in our main game and connect them with different sence.
+         3.Debug the game when they mix together.
+         4.complete the storyline in episode 4
+Martin : 1.Created another turn card game 
+         2. Add in to our main game and connect them in different sence.
+         3.Debug the connection problems.
+         4.complete the storyline in episode 4
+         5.Planning the last episode 5 and ready to finish.
+during this week,we planning to finish this game and add more elements to make game better.
+But still have some problems and bug in game.
+
+
