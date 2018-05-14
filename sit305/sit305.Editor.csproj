@@ -130,6 +130,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\bricks\Editor\BrickEditor.cs" />
     <Compile Include="Assets\Fungus\Scripts\Editor\AssetModProcessor.cs" />
     <Compile Include="Assets\Fungus\Scripts\Editor\BlockEditor.cs" />
     <Compile Include="Assets\Fungus\Scripts\Editor\BlockInspector.cs" />
