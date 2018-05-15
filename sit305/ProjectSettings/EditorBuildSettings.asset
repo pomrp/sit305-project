@@ -12,8 +12,11 @@ EditorBuildSettings:
     path: Assets/saolei/Assets/adjacent.unity
     guid: 0a31274e8ef266f44beb80429cd87801
   - enabled: 0
-    path: Assets/bricks/test.unity
+    path: 
     guid: 0ef482d51261934429de860d5b7883cc
   - enabled: 1
     path: Assets/bricks/bricks.unity
     guid: 3e05e8a1ea202294bb9994e0c2b2841a
+  - enabled: 1
+    path: Assets/cardgame/cardgame.unity
+    guid: 6f6cfdcc9fcdb7b4f8e01a13d3482ccb
