@@ -1,9 +1,10 @@
-# sit305-project
+# sit305-project：RUNE FOREST
 RPG game
 this is me
 this is my team:
-Dingan Ma (216328682)git hub username: martinanswer
-Yuan Ren(215194192)git hub username: pomrp
+Dingan Ma (216328682)git hub username: martinanswer link:https://github.com/pomrp/sit305-project
+Yuan Ren(215194192)git hub username: pomrp link:https://github.com/pomrp/sit305-project
+
 
 Henry comments 13/April
 (Henry also needs you to write a changelog.md and licenses.txt files)
@@ -40,8 +41,17 @@ There are three main file in the Asset file which is Done, fungus and fungusExam
 In the Done file,you can find all the images we used in the game, when you click Done-Graphic and you can find all the sounds we used in Done-Audio.
 In the Fungus file,you can find all the code when you click Fungus-Script.
 
+Feature:
+1. Combine card game, minne sweeper, brick game in the rpg game.
+2. Use unity fungus to create rpg game.
+3. Splash screen.
+4. Collect the runes every where to win the game.
+5. Amazing graphic design.
+
 Data structure
+
 1.character:
+Female, zoombie, monster, witch, witch's dauther, card game, mine sweeper game, bricks game.
 using UnityEngine;
 using UnityEngine.Serialization;
 using System.Collections.Generic;
@@ -198,3 +208,462 @@ namespace Fungus
         [Tooltip("Select if the calling block should stop or continue executing commands, or wait until the called block finishes.")]
         [SerializeField] protected CallMode callMode
 The thing to call next episode can be find in flowchart.
+
+code for mine sweeper:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Elemet : MonoBehaviour {
+
+    public bool mine;
+
+    public Sprite[] emptyTextures;
+    public Sprite mineTextures;
+
+	// Use this for initialization
+	void Start () {
+        mine = Random.value < 0.15;
+
+        int x = (int)transform.position.x;
+        int y = (int)transform.position.y;
+        Grid.elements[x, y] = this;
+		
+	}
+
+    public void loadTexture(int adjacentCount) {
+        if (mine)
+            GetComponent<SpriteRenderer>().sprite = mineTextures;
+        else
+            GetComponent<SpriteRenderer>().sprite = emptyTextures[adjacentCount];
+
+
+    }
+
+    public bool isCovered() {
+        return GetComponent<SpriteRenderer>().sprite.texture.name == "sweep";
+    }
+
+    private void OnMouseUpAsButton()
+    {
+        if (mine)
+        {
+            Grid.uncoverMines();
+            print("you loose");
+        }
+        else {
+            int x = (int)transform.position.x;
+            int y = (int)transform.position.y;
+            loadTexture(Grid.adjacentMines(x, y));
+            Grid.FFuncover(x, y, new bool[Grid.w, Grid.h]);
+            if (Grid.isFinished())
+                print("you win");
+
+        }
+    }
+
+
+    // Update is called once per frame
+
+}
+
+using UnityEngine;
+using System.Collections;
+
+public class Grid
+{
+? ? // The Grid itself
+? ? public static int w = 5; // this is the width
+? ? public static int h = 4; // this is the height
+? ? public static Elemet[,] elements = new Elemet[w, h];
+
+    public static void uncoverMines()
+    {
+        foreach (Elemet elem in elements)
+            if (elem.mine)
+                elem.loadTexture(0);
+    }
+
+    public static bool minAt(int x, int y) {
+        if (x >= 0 && y >= 0 && x < w && y < h)
+            return elements[x, y].mine;
+        return false;
+    }
+
+    public static int adjacentMines(int x, int y) {
+        int count = 0;
+        if (minAt(x, y + 1)) ++count;
+        if (minAt(x+1, y + 1)) ++count;
+        if (minAt(x+1, y)) ++count;
+        if (minAt(x+1, y - 1)) ++count;
+        if (minAt(x, y - 1)) ++count;
+        if (minAt(x-1, y - 1)) ++count;
+        if (minAt(x-1, y)) ++count;
+        if (minAt(x-1, y + 1)) ++count;
+        return count;
+    }
+
+    public static void FFuncover(int x, int y, bool[,] visited)
+    {
+        if (x >= 0 && y >= 0 && x < w && y < h)
+        {
+            if (visited[x, y])
+                return;
+
+            elements[x, y].loadTexture(adjacentMines(x, y));
+
+            if (adjacentMines(x, y) > 0)
+                return;
+
+            visited[x, y] = true;
+
+            FFuncover(x - 1, y, visited);
+            FFuncover(x + 1, y, visited);
+            FFuncover(x, y - 1, visited);
+            FFuncover(x, y + 1, visited);
+
+        }
+    }
+
+    public static bool isFinished() {
+        foreach (Elemet elem in elements)
+            if (elem.isCovered() && !elem.mine)
+                return false;
+        return true;
+
+    }
+}
+
+code for bricks:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Player : MonoBehaviour {
+
+    [Header("Horizontal speed")]
+    public float speedX;
+    Rigidbody2D playerRigidbody2D;
+
+	void Start () {
+        playerRigidbody2D = GetComponent<Rigidbody2D>();
+	}
+	
+	void Update () {
+        moveLeftOrRight();
+
+    }
+
+    float LeftOrRight()
+    {
+        return Input.GetAxis("Horizontal");
+    }
+
+    void moveLeftOrRight()
+    {
+        playerRigidbody2D.velocity = LeftOrRight() * new Vector2(speedX, 0);
+    }
+}
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Ball : MonoBehaviour {
+
+    public Text scoreText;
+
+    int score;
+
+    Rigidbody2D ballRigidbody2D;
+    CircleCollider2D ballCircleCollider2D;
+
+
+    [Header("Horizontal speed")]
+    public float speedX;
+
+    [Header("Vertical speed")]
+    public float speedY;
+
+    enum tags
+    {
+        Bricks,
+        background
+    }
+
+    void Start()
+    {
+        ballRigidbody2D = GetComponent<Rigidbody2D>();
+        ballCircleCollider2D = GetComponent<CircleCollider2D>();
+        //ballRigidbody2D.velocity = new Vector2(speedX, speedY);
+        scoreText.text = "Current score :";
+        Invoke("ballStart", 3);
+
+    }
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Space) )
+        {
+            ballStart();
+        }
+    }
+
+    void ballStart()
+        {
+        if (isStop())
+        {
+            ballCircleCollider2D.enabled = true;
+            transform.SetParent(null);
+            ballRigidbody2D.velocity = new Vector2(speedX, speedY);
+        }
+        }
+        bool isStop()
+        {
+        return ballRigidbody2D.velocity == Vector2.zero;
+        }
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            lockSpeed();
+            if (other.gameObject.CompareTag(tags.Bricks.ToString()))
+            {
+                other.gameObject.SetActive(false);
+                score += 10;
+                scoreText.text = "Current score :" + score;
+            }
+        }
+
+        void lockSpeed()
+        {
+            Vector2 lockSpeed = new Vector2(resetSpeedX(), resetSpeedY());
+            ballRigidbody2D.velocity = lockSpeed;
+        }
+        float resetSpeedX()
+        {
+            float currentSpeedX = ballRigidbody2D.velocity.x;
+            if (currentSpeedX < 0)
+            {
+                return -speedX;
+
+            }
+            else
+            {
+                return speedX;
+            }
+        }
+        float resetSpeedY()
+        {
+            float currentSpeedY = ballRigidbody2D.velocity.y;
+            if (currentSpeedY < 0)
+            {
+                return -speedY;
+
+            }
+            else
+            {
+                return speedY;
+            }
+        }
+    }
+
+code for card game:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Card : MonoBehaviour
+{
+    public CardState cardState;
+    public CardPattern cardPattern;
+    public GameManager gameManager;
+
+    void Start()
+    {
+        cardState = CardState.未翻牌;
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+    }
+
+    private void OnMouseUp()
+    {
+        if (cardState.Equals(CardState.已翻牌))
+        {
+            return;
+        }
+
+        if (gameManager.ReadyToCompareCards)
+        {
+            return;
+        }
+
+        OpenCard();
+        gameManager.AddCardInCardComparison(this);
+        gameManager.CompareCardsInList();
+    }
+    void OpenCard()
+    {
+        transform.eulerAngles = new Vector3(0, 180, 0);
+        cardState = CardState.已翻牌;
+    }
+}
+
+public enum CardState
+{
+    未翻牌, 已翻牌, 配對成功
+}
+
+public enum CardPattern
+{
+    無, 奇異果, 柳橙, 橘子, 水蜜桃, 芭樂, 葡萄, 蘋果, 西瓜
+}
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+using UnityEngine.SceneManagement;
+
+public class GameManager : MonoBehaviour
+{
+    [Header("比對卡牌的清單")]
+    public List<Card> cardComparison;
+
+    [Header("卡牌種類清單")]
+    public List<CardPattern> cardsToBePutIn;
+
+    public Transform[] positions;
+
+    [Header("已配對的卡牌數量")]
+    public int matchedCardsCount = 0;
+
+    void Start()
+    {
+        //SetupCardsToBePutIn();
+        //AddNewCard(CardPattern.水蜜桃);
+        GenerateRandomCards();
+    }
+
+    void SetupCardsToBePutIn()//Enum轉List
+    {
+        Array array = Enum.GetValues(typeof(CardPattern));
+        foreach (var item in array)
+        {
+            cardsToBePutIn.Add((CardPattern)item);
+        }
+        cardsToBePutIn.RemoveAt(0);//刪掉Cardpattern.無
+    }
+
+    void GenerateRandomCards()//發牌
+    {
+        int positionIndex = 0;
+
+        for (int i = 0; i < 2; i++)
+        {
+            SetupCardsToBePutIn();//準備卡牌
+            int maxRandomNumber = cardsToBePutIn.Count;//最大亂數不超過8
+            for (int j = 0; j < maxRandomNumber; maxRandomNumber--)
+            {
+                int randomNumber = UnityEngine.Random.Range(0, maxRandomNumber);//0到8之間產生亂數 最小是0 最大是7
+                AddNewCard(cardsToBePutIn[randomNumber], positionIndex);//抽牌
+                cardsToBePutIn.RemoveAt(randomNumber);
+                positionIndex++;
+            }
+        }
+    }
+
+    void AddNewCard(CardPattern cardPattern, int positionIndex)
+    {
+        GameObject card = Instantiate(Resources.Load<GameObject>("Prefabs/牌"));
+        card.GetComponent<Card>().cardPattern = cardPattern;
+        card.name = "牌_" + cardPattern.ToString();
+        card.transform.position = positions[positionIndex].position;
+
+        GameObject graphic = Instantiate(Resources.Load<GameObject>("Prefabs/Pic"));
+        graphic.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Graphic/" + cardPattern.ToString());
+        graphic.transform.SetParent(card.transform);//變成牌的子物件
+        graphic.transform.localPosition = new Vector3(0, 0, 0.1f);//設定座標
+        graphic.transform.eulerAngles = new Vector3(0, 180, 0);//順著Y軸轉180度 翻牌時不會左右顛倒
+    }
+
+    public void AddCardInCardComparison(Card card)
+    {
+        cardComparison.Add(card);
+    }
+
+    public bool ReadyToCompareCards
+    {
+        get
+        {
+            if (cardComparison.Count == 2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    public void CompareCardsInList()
+    {
+        if (ReadyToCompareCards)
+        {
+            //Debug.Log("可以比對卡牌了");
+            if (cardComparison[0].cardPattern == cardComparison[1].cardPattern)
+            {
+                Debug.Log("兩張牌一樣");
+                foreach (var card in cardComparison)
+                {
+                    card.cardState = CardState.配對成功;
+                }
+
+                ClearCardComparison();
+                matchedCardsCount = matchedCardsCount + 2;
+                if (matchedCardsCount >= positions.Length)
+                {
+                    StartCoroutine(ReloadScene());
+                }
+            }
+            else
+            {
+                Debug.Log("兩張牌不一樣");
+                StartCoroutine(MissMatchCards());
+                //TurnBackCards();
+                //ClearCardComparison();
+            }
+        }
+    }
+
+    void ClearCardComparison()
+    {
+        cardComparison.Clear();
+    }
+
+    void TurnBackCards()
+    {
+        foreach (var card in cardComparison)
+        {
+            card.gameObject.transform.eulerAngles = Vector3.zero;
+            //card.gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
+            card.cardState = CardState.未翻牌;
+        }
+    }
+
+    IEnumerator MissMatchCards()
+    {
+        yield return new WaitForSeconds(1.5f);
+        TurnBackCards();
+        ClearCardComparison();
+    }
+
+    IEnumerator ReloadScene()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+}
+
+

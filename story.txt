@@ -1,0 +1,72 @@
+The world collapse, the land fission{wc}
+Monsters poured out from the ground{wc}
+The only female warrior
+Carring father's mission{wc}
+Start off the monsters
+enemy come out!
+Don't hold back.{wc}
+Let's have some real fun.{wc}
+Don't you trust me?{wc}
+Should I make your pulse rise? Or...STOP! {wc}
+Or...STOP!{w=0.3}{punch=10,0.5}{wc}
+Or...STOOOP!{w=0.3}{punch=20,0.7}{wc}
+Or...STOOOOP!{w=0.3}{punch=30,1}
+Oh oh Oh Oh ~
+The enemy was tempted{wc}
+Got a locked ancient rune K{wc}
+Level Up to Level 1 !{wc}
+Got New spell  "Traveler's Call" 
+ Ready for battle!  
+Oh Oh,  look at your little fist{wc}
+How can I bear to bully you? {wc}
+a~ a~ I will  never forget you little girl 
+The monster has been killed 
+Got a locked ancient rune K{wc}
+Level Up to Level 1 !{wc}
+Got New spell  "Traveler's Call"
+The female warrior keeps her advanture to find other runes{wc} 
+Few days later, she goes to a meadow.{wc}
+Dear darling, I can see your fate.{wc} 
+If you help me find my magic hat. I will tell you the shortcut to find runes. {wc}
+
+who are you?{wc}
+why i trust you?
+I am a prophet,{wc}
+Believe it or not,{wc}
+It is up to you!{wc}
+Find the magic hat
+ "Thank you,keep your tour and you will find my orchard."{wc}
+"There is someone waiting for you."{wc}
+ "And now I will give you a rune, which called D"{wc} 
+"level up to level2"
+Find the potion
+Find the scroll
+
+Find the staff
+
+"Hey dear, I am the son of witch."{wc} 
+"There is a magic orchard."{wc}
+ "300 years ago, one the rune fell down here."{wc}
+ Many people came here and try to find rune but they lost in orchard."{wc}
+"Hope you can find rune"{wc}
+"And if you can find the rune, your level can increase by 3"
+"Thank you take me here."{wc} 
+"I will find the rune to save the world"
+"The female warrior goes to the orchard"
+Witch knows how to deal with this spell{wc}
+You can only do 1 damage to her!!!!!{wc}
+You can not charm a witch{wc}
+The spell was missed!!!!!{wc}
+Ohhhhhhh. my god, I never see this spell before!!!!!{wc}
+The light destory my soul!!!!!!!{wc}
+But my son will not let you go!!!!!
+My mother told me that don't believe any stanger.{wc}
+hehe.
+The enemy has been killed{wc}
+Got a locked ancient rune A{wc}
+Level Up to Level 3 !{wc}
+You killed my mom! {wc}
+Fall into my illusion!!! {wc}
+"level up to level4"
+
+
